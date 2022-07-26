@@ -1,5 +1,12 @@
+import { GlobalStyle } from "./GlobalStyles";
+import { Form } from "./components/Form/Form";
+import { Container } from "./styles";
+
 export const App = () => {
   return (
-    <div></div>
+    <Container>
+      <GlobalStyle />
+      <Form />
+    </Container>
   );
 }

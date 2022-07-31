@@ -1,7 +1,11 @@
 import { StyledButton } from "./styles";
 
-export const Button = () => {
+interface IProps {
+    disabled: boolean;
+}
+
+export const Button = ({ disabled }: IProps) => {
     return (
-        <StyledButton>Ohhhoooooo 🍻</StyledButton>
+        <StyledButton type="submit" disabled={disabled}>Ohhhoooo 🍻</StyledButton>
     )
 }

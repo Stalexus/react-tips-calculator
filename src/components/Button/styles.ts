@@ -9,6 +9,7 @@ export const StyledButton = styled.button`
     border: none;
     color: #FFF;
     margin-top: 45px;
+    margin-bottom: 45px;
     cursor: pointer;
     opacity: ${({ disabled }) => ( disabled ? '0.5' : '1' )};
     @media (max-width: 576px) {

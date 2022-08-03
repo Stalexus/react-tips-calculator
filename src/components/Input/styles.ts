@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const StyledInput = styled.input`
-    padding: 19px 117px;
+    padding: 19px 110px;
     margin-top: 40px;
     background-color: #FFFFFF;
     border-radius: 30px;
@@ -14,6 +14,5 @@ export const StyledInput = styled.input`
     
     @media (max-width: 576px) {
         padding: 19px 80px;
-        margin-left: 20px;
     }
 `

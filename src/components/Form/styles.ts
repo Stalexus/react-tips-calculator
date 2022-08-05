@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   max-width: 440px;
   @media (max-width: 576px) {
     max-width: 380px;

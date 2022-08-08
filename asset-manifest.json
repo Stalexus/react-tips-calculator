@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-tips-calculator/static/js/main.15a4e309.js",
+    "main.js": "/react-tips-calculator/static/js/main.f765cf5b.js",
     "index.html": "/react-tips-calculator/index.html",
-    "main.15a4e309.js.map": "/react-tips-calculator/static/js/main.15a4e309.js.map"
+    "main.f765cf5b.js.map": "/react-tips-calculator/static/js/main.f765cf5b.js.map"
   },
   "entrypoints": [
-    "static/js/main.15a4e309.js"
+    "static/js/main.f765cf5b.js"
   ]
 }

@@ -4,18 +4,20 @@ import { Button } from '../Button/Button';
 import { CustomSelect } from '../CustomSelect/Select';
 import { Input } from '../Input/Input';
 import { Total, StyledForm, Description, Title } from './styles';
+import { useInput } from "../../hooks/useInput";
 
 export const Form = () => {
-    const [bill, setBill] = useState('');
-    const [people, setPeople] = useState('');
+    const bill = useInput();
+    const people = useInput();
+
     const [tips, setTips] = useState<ITipsOption>({ value: 10, label: "10%" });
     const [total, setTotal] = useState(0);
     const [disabled, setButton] = useState(true);
 
-    const calculateTips = (billStr: string, peopleStr: string): number => {
-        const bill = Number(billStr);
-        const people = Number(peopleStr);
-        return ((bill * tips.value) / 100) * people;
+    const calculateTips = () => {
+        const billValue = Number(bill.value);
+        const peopleValue = Number(people.value);
+        return ((billValue * tips.value) / 100) * peopleValue;
     };
 
     const handleSelect = (option: ITipsOption | null): void => {
@@ -26,26 +28,18 @@ export const Form = () => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
-        setTotal(calculateTips(bill, people));
-    };
-
-    const handlePeople = (value: string): void => {
-        setPeople(value);
+        setTotal(calculateTips());
     };
 
     const handleButton = (value: boolean): void => {
         setButton(value);
     };
 
-    const handleBill = (value: string): void => {
-        setBill(value);
-    };
-
-    useEffect((): void => {
+    useEffect(() => {
         if (bill && people) {
-            return handleButton(false);
+            handleButton(false);
         } else {
-            return handleButton(true);
+            handleButton(true);
         }
     }, [bill, people]);
 
@@ -53,11 +47,11 @@ export const Form = () => {
         <StyledForm onSubmit={handleSubmit}>
             <Title>Welcome to App</Title>
             <Description>Let's go calculate your tips</Description>
-            <Input placeholder="Enter bill" type="number" value={bill} onChange={handleBill} />
-            <Input placeholder="Enter persons" type="number" value={people} onChange={handlePeople} />
+            <Input placeholder="Enter bill" type="number" {...bill} />
+            <Input placeholder="Enter persons" type="number" {...people} />
             <CustomSelect tips={tips} handleSelect={handleSelect} />
             <Total>Total: {total.toFixed(2)} $</Total>
-            <Button disabled={disabled} />
+            <Button isDisabled={disabled} />
         </StyledForm>
     )
 }

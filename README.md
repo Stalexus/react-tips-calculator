@@ -1,7 +1,7 @@
 # React-tips-calculator
 
 ## About The Project
-![screenshot.png](src/assets/screenshot.png)
+![screenshot.png](/screenshot.png)
 
 ## Applied technology:
 * [React](https://ru.reactjs.org/)
